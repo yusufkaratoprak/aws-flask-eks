@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: my-cluster
+  region: eu-west-1
+managedNodeGroups:
+  - name: job-manager
+    instanceType: t2.micro
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 10
+    tags:
+      'Project': 'KubernetesNoob'
