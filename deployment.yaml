@@ -24,9 +24,9 @@ spec:
     metadata:
       labels:
         app: my-flask
-    spec:
+  spec:
       containers:
       - name: my-flask
-        image: <IMAGE_URI_FROM_ECR>
+        image: yusufkaratoprak/awsflaskeks:latest
         ports:
         - containerPort: 5000
