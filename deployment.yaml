@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  my-flask
+  name: my-flask-deployment
 spec:
   selector:
     matchLabels:
-      app: my-flask
+      app: my-flask-pod
   replicas: 2
   template:
     metadata:
       labels:
-        app: my-flask
+        app: my-flask-pod
     spec:
-    containers:
-        - name: my-flask
-          image: yusufkaratoprak/awsflaskeks:latest
-          ports:
-            - containerPort: 5000
+      containers:
+      - name: my-flask-container
+        image: yusufkaratoprak/awsflaskeks:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 500
