@@ -10,3 +10,5 @@ spec:
     port: 6000
     targetPort: 5000
   type: LoadBalancer
+
+  
